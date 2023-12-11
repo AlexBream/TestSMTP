@@ -24,7 +24,8 @@ internal class Program
         MailMessage mail = new MailMessage();
 
         // Imposta il mittente della mail
-        mail.From = new MailAddress(config["Mail:From"]);
+        mail.Sender = new MailAddress(config["Mail:From"]);
+        mail.From = new MailAddress("fakemail@fakedomain.ext");
 
         // Aggiungi uno o più destinatari della mail
         mail.To.Add(config["Mail:To"]);
