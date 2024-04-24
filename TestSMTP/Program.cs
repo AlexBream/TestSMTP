@@ -34,7 +34,7 @@ internal class Program
         mail.Subject = "Questa è una mail di prova";
 
         // Imposta il corpo della mail, che può essere in formato HTML o testo semplice
-        mail.Body = "Ciao, questa è una mail inviata da un programma in C#";
+        mail.Body = $"{DateTime.Now} - Ciao, questa è una mail inviata da un programma in C#";
         mail.IsBodyHtml = false;
 
         // Crea un nuovo oggetto SmtpClient
