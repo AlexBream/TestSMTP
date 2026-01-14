@@ -45,14 +45,17 @@ internal class Program
         smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 
         // Imposta la porta SMTP, che di solito è la 25 o la 587
-        int port = 587;
+        int port = 25;
         smtp.Port = port;
 
         // Abilita SSL
-        smtp.EnableSsl = true;
+        smtp.EnableSsl = false;
        
-        // Imposta le credenziali di autenticazione, se richieste dal server SMTP
-        smtp.Credentials = new NetworkCredential(config["SmtpServer:Username"], config["SmtpServer:Password"]);
+        if(!string.IsNullOrEmpty( config["SmtpServer:Username"]))
+        {
+            // Imposta le credenziali di autenticazione, se richieste dal server SMTP
+            smtp.Credentials = new NetworkCredential(config["SmtpServer:Username"], config["SmtpServer:Password"]);
+        }
 
 
         try
