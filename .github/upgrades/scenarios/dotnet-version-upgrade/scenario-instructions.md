@@ -31,6 +31,7 @@
 ## Key Decisions Log
 - Upgrade the complete solution from .NET 8 to .NET 10 LTS.
 - Use the confirmed All-at-Once strategy for the single-project solution.
+- Generate a detailed final change report for the completed upgrade.
 
 ## Build Tool Decisions
 - **TestSMTP.csproj**: `dotnet build` (SDK-style console project targeting modern .NET with no special full-MSBuild requirements).
